@@ -1,0 +1,57 @@
+---
+title: "M3S Vignette"
+author: "Yu Zhang"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{M3S Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+M3S is an R package. Input data, one or multiple data matrix, row is feature and column is sample.
+
+# Testing data
+
+The testing data used in this vignette will provided on the website of Chi Zhang's lab.
+
+- Simulated data for each of the distribution
+- Single cell RNA-seq data (the sets Changlin has used)
+- TCGA breast cancer data
+
+# Analysis
+
+The following functions are provided by the Package:
+
+- Merge all the data by binding the columns
+- Test log + normal : Poisson, Negative Binomial (dispersed Poisson), ZIP, ZINB, Beta Poisson, Gaussian, ZIG, ZIMG, LTMG, MG (mixed Gaussian) for each feature.
+- KS + likelihood -> model selection
+- Output key parameters:
+- Select the best differential test methods:
+- Do test based on user's selection and implement with GLM~
+
+# Tutorial
+
+Suppose we have one or more data matrices with the same genes and different conditions.
+
+Before the analysis, usually we need need load the matrices from the permanent storage like disk.
+
+``` {R, cache = TRUE}
+tg_keys <- c("Fishel_scFPKM_sc1.txt", "Fishel_scFPKM_sc2.txt", "Fishel_scFPKM_si_APE1.txt", 
+  "Fishel_scFPKM_h_sc0.txt", "Fishel_scFPKM_h_si_APE1.txt")
+tg_conds_meta <- matrix(c(0, 0, 1, 0, 1, 0, 0, 0, 1, 1), nrow = 5, ncol = 2, 
+                        dimnames = list(tg_keys, c("Si", "H")))
+
+Data_list <- list()
+for (i in 1:length(tg_keys)) {
+  Data_list[[i]] <- as.matrix(read.delim(tg_keys[i], row.names = 1))
+}
+Data_0 <- do.call(cbind, Data_list)
+```

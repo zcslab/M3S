@@ -29,3 +29,20 @@ transcriptional regulatory state, and (3) identify differentially varied
 gene expressions, for a given scRNA-seq. In addition, the package can be
 also applied to bulk tissue transcriptomics or other omics data for
 characterization of the MM of features.
+
+#### [Paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3243-1)
+
+## Citations
+If you find the code helpful in your resarch or work, please cite the following papers.
+```BibTex
+@article{zhang2019m3s,
+  title={M3S: A comprehensive model selection for multi-modal single-cell RNA sequencing data},
+  author={Zhang, Yu and Wan, Changlin and Wang, Pengcheng and Chang, Wennan and Huo, Yan and Chen, Jian and Ma, Qin and Cao, Sha and Zhang, Chi},
+  journal={BMC bioinformatics},
+  volume={20},
+  number={24},
+  pages={1--5},
+  year={2019},
+  publisher={BioMed Central}
+}
+```

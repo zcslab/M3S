@@ -30,7 +30,9 @@ gene expressions, for a given scRNA-seq. In addition, the package can be
 also applied to bulk tissue transcriptomics or other omics data for
 characterization of the MM of features.
 
-#### [Paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3243-1)
+#### [Download Paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3243-1)
+
+Zhang, Yu, Changlin Wan, Pengcheng Wang, Wennan Chang, Yan Huo, Jian Chen, Qin Ma, Sha Cao, and Chi Zhang. "M3S: A comprehensive model selection for multi-modal single-cell RNA sequencing data." BMC bioinformatics 20, no. 24 (2019): 1-5.
 
 ## Citations
 If you find the code helpful in your resarch or work, please cite the following papers.
